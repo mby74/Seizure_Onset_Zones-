@@ -254,6 +254,6 @@ To reproduce the results:
 
 If you use this work, please cite:
 
-Bani Yaghoub, M. (2026)  
-Identifying Seizure Onset Zones via Nonlinear Dynamical Geometry of iEEG Signals  
-UMKC – Saint Luke’s Hospital
+## Citation
+
+Bani Yaghoub M,  Identifying Seizure Onset Zones via Nonlinear Dynamical Geometry of iEEG Signals. GitHub; 2026. https://github.com/mby74/Seizure_Onset_Zones
