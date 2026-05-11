@@ -1,7 +1,11 @@
 # Identifying Seizure Onset Zones via Nonlinear Dynamical Geometry of iEEG Signals
 
-**UMKC Dr. Bani and  Saint Luke’s Hospital Dr. Bartosz Grobelny Labs**  
-**Date:** April 4, 2026  
+This work is part of an ongoing collaborative research effort between:
+
+- **Dr. Bani Lab**, University of Missouri–Kansas City  
+- **Dr. Grobelny Lab**, Saint Luke’s Hospital  
+
+
 
 
 
