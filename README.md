@@ -125,7 +125,11 @@ These time series show structured, non-random dynamics. While not strictly perio
 
 ### Figure 2: Delay-Embedded Attractor (G7)
 
-![Figure 2](figures/figure2_top_channel_attractor.png)
+<p align="center">
+  <img src="figures/figure2_top_channel_attractor.png" width="700">
+</p>
+
+
 
 **Figure 2.** Delay-embedded attractor for channel G7 using a 3D reconstruction.
 
@@ -165,7 +169,11 @@ The earliest transitions occur in channels G7, G24, G30, G31, and G36, all at ap
 
 ### Figure 6: Group-Level Onset Summary
 
-![Figure 6](figures/figure6_group_onset_summary.png)
+<p align="center">
+  <img src="figures/figure6_group_onset_summary.png" width="700">
+</p>
+
+
 
 **Figure 6.** Mean onset time by anatomical group.
 
