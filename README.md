@@ -3,7 +3,7 @@
 **UMKC – Saint Luke’s Hospital**  
 **Date:** April 4, 2026  
 
----
+
 
 ## Abstract
 
@@ -13,7 +13,7 @@ This repository presents a mechanism-driven nonlinear dynamical systems framewor
 
 The results suggest that specific grid electrodes, particularly G7, exhibit the earliest transition, followed by rapid recruitment of mesial temporal and orbitofrontal regions. This supports a hypothesis of localized neocortical onset with rapid network propagation.
 
----
+
 
 ## Background and Significance
 
@@ -23,7 +23,7 @@ In contrast, the brain can be modeled as a nonlinear dynamical system, where sei
 
 The central idea is that normal brain activity is high-dimensional and chaotic, whereas seizure activity corresponds to a more ordered, lower-dimensional dynamical regime. Detecting the earliest transition toward this ordered state provides both temporal and spatial localization of seizure onset.
 
----
+
 
 ## Mathematical Framework
 
@@ -37,7 +37,7 @@ $$
 
 This produces a phase-space representation that preserves the topology of the underlying system.
 
----
+
 
 ### Geometric Features
 
@@ -73,7 +73,7 @@ $$
 R = \sqrt{\frac{1}{N}\sum_{i=1}^{N}\left\|\mathbf{X}_i - \bar{\mathbf{X}}\right\|^2}
 $$
 
----
+
 
 ### Order Score
 
@@ -85,7 +85,7 @@ $$
 
 Higher values indicate more ordered dynamics, corresponding to seizure-like behavior.
 
----
+
 
 ### Onset Detection
 
@@ -97,10 +97,30 @@ $$
 
 Channels are ranked based on the earliest transition toward this ordered state.
 
----
+
 
 ## Methods
 
+## Repository Structure
+
+The repository is organized as follows:
+
+- `sub-umf003_run-01.csv` — raw iEEG dataset  
+- `window_feature_table.csv` — extracted dynamical features over time  
+- `candidate_onset_ranking.csv` — channel-wise onset ranking  
+- `channel_summary_table.csv` — per-channel summary statistics  
+- `group_summary_table.csv` — group-level onset analysis  
+- `CodeFor_sub_umf003_run_01.m` — MATLAB implementation of analysis pipeline  
+- `figures/` — all visualization outputs
+
+- 
+### Data Source
+
+The analysis is based on intracranial EEG (iEEG) data from:
+
+- `sub-umf003_run-01.csv`: multichannel iEEG recording (~500 Hz, ~2 seconds)
+
+  
 The dataset consists of multichannel intracranial EEG (iEEG) recordings obtained at Saint Luke’s Hospital and processed at UMKC. The data include recordings from grid electrodes, anterior hippocampal (AH), cingulate (Cing), posterior hippocampal (PH), and orbitofrontal (BO) regions.  
 
 The sampling rate is approximately 500 Hz, and the recording duration is approximately 2 seconds, yielding a short but high-resolution window suitable for exploratory dynamical analysis. A total of 70 channels were analyzed.  
@@ -109,10 +129,33 @@ Each channel was treated as a one-dimensional observable of an underlying high-d
 
 The order score was computed for each channel and window, smoothed, and used to detect transitions toward more ordered dynamics. Candidate onset times were defined as the earliest significant increase in the order score.
 
----
+### Feature Extraction
+
+Geometric features were computed using sliding windows and stored in:
+
+- `window_feature_table.csv`: time-resolved feature values per channel
+
+Channel-level and group-level summaries are available in:
+
+- `channel_summary_table.csv`
+- `group_summary_table.csv`
+
+### Code
+
+All computations were performed using:
+
+- `CodeFor_sub_umf003_run_01.m`: MATLAB implementation of delay embedding, feature extraction, and onset detection
+  
+
+
 
 ## Results
 
+The full ranking of candidate onset channels is provided in:
+
+- `candidate_onset_ranking.csv`
+
+  
 ### Figure 1: Time Series of Top Candidate Channels
 
 ![Figure 1](figures/figure1_top_channel_timeseries.png)
@@ -121,7 +164,7 @@ The order score was computed for each channel and window, smoothed, and used to 
 
 These time series show structured, non-random dynamics. While not strictly periodic, the signals exhibit organized fluctuations consistent with deterministic behavior rather than noise. This suggests that the underlying system is governed by nonlinear dynamics that can be reconstructed in phase space.
 
----
+
 
 ### Figure 2: Delay-Embedded Attractor (G7)
 
@@ -135,7 +178,6 @@ These time series show structured, non-random dynamics. While not strictly perio
 
 The attractor exhibits a structured but irregular geometry, indicating a system that is neither random nor purely periodic. This intermediate structure is characteristic of nonlinear dynamical systems approaching a transition. The geometry suggests evolving constraints in the system's degrees of freedom.
 
----
 
 ### Figure 3: Order Score Heatmap
 
@@ -145,7 +187,7 @@ The attractor exhibits a structured but irregular geometry, indicating a system 
 
 This figure shows the spatiotemporal evolution of dynamical ordering. Early increases in order score are concentrated in specific grid channels, followed by propagation to other regions. This pattern supports the hypothesis of localized onset followed by network recruitment.
 
----
+
 
 ### Figure 4: Feature Trajectories for Top Channel (G7)
 
@@ -155,7 +197,7 @@ This figure shows the spatiotemporal evolution of dynamical ordering. Early incr
 
 The participation and correlation dimensions decrease near the transition, indicating reduced complexity. Determinism increases prior to the transition, reflecting more predictable dynamics. The Lyapunov proxy shows fluctuations consistent with changing stability. The order score rises sharply around 1.5–1.6 seconds, marking the transition toward a more ordered state.
 
----
+
 
 ### Figure 5: Candidate Onset Ranking by Channel
 
@@ -165,7 +207,7 @@ The participation and correlation dimensions decrease near the transition, indic
 
 The earliest transitions occur in channels G7, G24, G30, G31, and G36, all at approximately 0.1991 seconds. These channels represent the strongest candidates for seizure onset based on dynamical criteria.
 
----
+
 
 ### Figure 6: Group-Level Onset Summary
 
@@ -179,7 +221,7 @@ The earliest transitions occur in channels G7, G24, G30, G31, and G36, all at ap
 
 At the group level, anterior hippocampal (AH) channels show the earliest average onset, followed by cingulate and posterior hippocampal regions. This indicates early involvement of mesial temporal structures at the network level.
 
----
+
 
 ## Discussion
 
@@ -193,7 +235,16 @@ The study is limited by the short duration of the recording and the absence of c
 
 Despite these limitations, the approach demonstrates that nonlinear dynamical geometry provides an interpretable and data-efficient framework for seizure analysis. Unlike black-box machine learning models, this method directly reveals where, when, and how seizures emerge in the brain.
 
----
+## Reproducibility
+
+To reproduce the results:
+
+1. Load `sub-umf003_run-01.csv`
+2. Run `CodeFor_sub_umf003_run_01.m`
+3. Generated outputs will match:
+   - feature tables
+   - onset rankings
+   - figures
 
 ## Citation
 
