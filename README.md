@@ -115,7 +115,7 @@ The order score was computed for each channel and window, smoothed, and used to 
 
 ### Figure 1: Time Series of Top Candidate Channels
 
-![Figure 1](figure1_top_channel_timeseries.png)
+![Figure 1](figures/figure1_top_channel_timeseries.png)
 
 **Figure 1.** Normalized raw signals from the top-ranked channels (G7, G24, G30, G31, G36, AH6).
 
@@ -125,7 +125,7 @@ These time series show structured, non-random dynamics. While not strictly perio
 
 ### Figure 2: Delay-Embedded Attractor (G7)
 
-![Figure 2](figure2_top_channel_attractor.png)
+![Figure 2](figures/figure2_top_channel_attractor.png)
 
 **Figure 2.** Delay-embedded attractor for channel G7 using a 3D reconstruction.
 
@@ -135,7 +135,7 @@ The attractor exhibits a structured but irregular geometry, indicating a system 
 
 ### Figure 3: Order Score Heatmap
 
-![Figure 3](figure3_order_score_heatmap.png)
+![Figure 3](figures/figure3_order_score_heatmap.png)
 
 **Figure 3.** Heatmap of order score across channels and time (higher values indicate more ordered dynamics).
 
@@ -145,7 +145,7 @@ This figure shows the spatiotemporal evolution of dynamical ordering. Early incr
 
 ### Figure 4: Feature Trajectories for Top Channel (G7)
 
-![Figure 4](figure4_top_channel_feature_trajectories.png)
+![Figure 4](figures/figure4_top_channel_feature_trajectories.png)
 
 **Figure 4.** Temporal evolution of geometric features and order score for channel G7.
 
@@ -155,7 +155,7 @@ The participation and correlation dimensions decrease near the transition, indic
 
 ### Figure 5: Candidate Onset Ranking by Channel
 
-![Figure 5](figure5_onset_ranking.png)
+![Figure 5](figures/figure5_onset_ranking.png)
 
 **Figure 5.** Sorted candidate onset times across all channels.
 
@@ -165,7 +165,7 @@ The earliest transitions occur in channels G7, G24, G30, G31, and G36, all at ap
 
 ### Figure 6: Group-Level Onset Summary
 
-![Figure 6](figure6_group_onset_summary.png)
+![Figure 6](figures/figure6_group_onset_summary.png)
 
 **Figure 6.** Mean onset time by anatomical group.
 
